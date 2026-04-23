@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>UAV Interceptor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAV Interceptor - Dubai C-RAM</title>
     <style>
-        body { margin: 0; background: #000; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; }
-        canvas { border: 2px solid #333; background: #050505; }
+        body { margin: 0; padding: 0; background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh; overflow: hidden; font-family: 'Courier New', Courier, monospace; }
+        canvas { border: 5px solid #333; box-shadow: 0 0 40px rgba(211, 84, 0, 0.4); cursor: crosshair; background-color: #a5dcf0; }
+        
+        /* Moved from 20px to 10px to sit closer to the left edge */
+        #ui-info { 
+            position: absolute; 
+            top: 20px; 
+            left: 10px; 
+            color: #1a1a1a; 
+            font-weight: bold; 
+            pointer-events: none; 
+            background: rgba(255, 255, 255, 0.3); 
+            padding: 10px; 
+            border-radius: 5px; 
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
+
+    <div id="ui-info">
+        UNIT: LPWS C-RAM<br>
+        STATUS: SYSTEM ACTIVE<br>
+        LOC: AL MARMOOM, DUBAI<br>
+        UNIT COST: $80/shot<br>
+        TOTAL COST: <span id="total-cost">$0</span>
+    </div>
+
     <canvas id="game" width="800" height="600"></canvas>
+
     <script src="main.js"></script>
 </body>
 </html>
